@@ -65,6 +65,9 @@ dependencies {
     debugImplementation (Deps.composeToolingDebugUI)
     debugImplementation (Deps.composeTestManifestUI)
 
-
+    implementation (Deps.viewModelCompose)
+    implementation (Deps.navigationCompose)
+    implementation (Deps.glideCompose)
+    implementation (Deps.timber)
 
 }
