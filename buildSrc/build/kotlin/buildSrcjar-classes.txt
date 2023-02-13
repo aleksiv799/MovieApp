@@ -1,0 +1,1 @@
+/home/aleksiv/dev/android/trainee/MovieApp/buildSrc/build/classes/kotlin/main/buildSrc/src/main/java/Config.class:/home/aleksiv/dev/android/trainee/MovieApp/buildSrc/build/classes/kotlin/main/buildSrc/src/main/java/Deps.class:/home/aleksiv/dev/android/trainee/MovieApp/buildSrc/build/classes/kotlin/main/buildSrc/src/main/java/Versions.class
