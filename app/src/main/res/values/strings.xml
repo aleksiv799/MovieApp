@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">MovieApp</string>
+
+
+    <!-- String res -->
+    <string name="movie_one_name">Гнев человеческий</string>
+    <string name="movie_one_date_pub">22 апреля</string>
+    <string name="movie_one_description">Эйч — загадочный и холодный на вид джентльмен,
+        но внутри него пылает жажда справедливости</string>
+    <string name="movie_two_name">Мортал комбат</string>
+    <string name="movie_two_date_pub">8 апреля</string>
+    <string name="movie_two_description">Боец смешанных единоборств Коул Янг не раз соглашался проиграть за деньги.</string>
+    <string name="movie_three_name">Упс...Приплыли</string>
+    <string name="movie_three_date_pub">29 апреля</string>
+    <string name="movie_three_description">От Великого потопа зверей спас ковчег. Но спустя полгода скитаний
+        они готовы сбежать с него куда угодно</string>
+    <string name="movie_four_name">The Box</string>
+    <string name="movie_four_date_pub">13 мая</string>
+    <string name="movie_four_description">Уличный музыкант знакомится с музыкальным продюсером,
+        и они вдвоём отправляются в путешествие</string>
+    <string name="movie_five_name">Сага о Дэни Эрнандасе </string>
+    <string name="movie_five_date_pub">29 апреля</string>
+    <string name="movie_five_description">Tekashi69 или Сикснайн — знаменитый бруклинский рэпер с радужными волосами — прогремел</string>
+    <string name="movie_six_name">Пчелка Майя </string>
+    <string name="movie_six_date_pub">6 мая</string>
+    <string name="movie_six_description">Когда упрямая пчелка Майя и ее лучший друг Вилли спасают принцессу-муравьишку, начинается сказочное..</string>
 </resources>

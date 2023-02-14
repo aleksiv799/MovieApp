@@ -37,7 +37,7 @@ fun MovieAppTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composab
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = MovieTypography,
         shapes = Shapes,
         content = content
     )
