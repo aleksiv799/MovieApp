@@ -1,35 +1,98 @@
 package dev.android.edu.trainee.movieapp
 
+import MovieViewModel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
+import androidx.activity.viewModels
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import dev.android.edu.trainee.movieapp.ui.theme.MovieAppTheme
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import dev.android.edu.trainee.movieapp.Constants.fontSize_name
+import dev.android.edu.trainee.movieapp.Constants.image_size_h
+import dev.android.edu.trainee.movieapp.Constants.image_size_w
+import dev.android.edu.trainee.movieapp.Constants.padding_def
+import dev.android.edu.trainee.movieapp.Constants.shape_round_size
+import dev.android.edu.trainee.movieapp.data.model.Movie
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val movieViewModel: MovieViewModel by viewModels()
+        val moviesList = movieViewModel.getMoviesList()
         setContent {
-
+           LazyVerticalGridMovie(movies = moviesList)
         }
     }
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+fun MovieCard(movie: Movie) {
+    val modifier = Modifier
+        .padding(padding_def)
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MovieAppTheme {
-        Greeting("Android")
+    Card(
+        modifier = modifier
+            .height(Constants.card_height)
+            .width(Constants.card_width),
+        shape = RoundedCornerShape(shape_round_size)
+    ) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally){
+            Image(
+                painter = painterResource(id = movie.photo),
+                contentDescription = movie.name.toString(),
+                modifier = modifier
+                    .height(image_size_h)
+                    .width(image_size_w)
+            )
+            Column(
+                modifier = modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+
+                Text(
+                    text = stringResource(id = movie.name),
+                    modifier = modifier,
+                    textAlign = TextAlign.Center,
+                    fontSize = fontSize_name,
+                    fontWeight = FontWeight.Bold
+
+                )
+                Text(
+                    text = stringResource(id = movie.date_pub),
+                    modifier = modifier,
+                    textAlign = TextAlign.Center
+                )
+            }
+        }
     }
 }
+
+@Composable
+fun LazyVerticalGridMovie(movies: List<Movie>) {
+    LazyVerticalGrid(columns = GridCells.Fixed(2)) {
+        items(movies) {movie ->
+            MovieCard(movie)
+        }
+    }
+}
+
