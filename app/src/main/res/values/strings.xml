@@ -6,7 +6,10 @@
     <string name="movie_one_name">Гнев человеческий</string>
     <string name="movie_one_date_pub">22 апреля</string>
     <string name="movie_one_description">Эйч — загадочный и холодный на вид джентльмен,
-        но внутри него пылает жажда справедливости</string>
+        но внутри него пылает жажда справедливости. Преследуя свои мотивы,
+        он внедряется в инкассаторскую компанию, чтобы выйти на соучастников серии многомиллионных ограблений,
+        потрясших Лос-Анджелес. В этой запутанной игре у каждого своя роль, но под подозрением оказываются все.
+        Виновных же обязательно постигнет гнев человеческий.</string>
     <string name="movie_two_name">Мортал комбат</string>
     <string name="movie_two_date_pub">8 апреля</string>
     <string name="movie_two_description">Боец смешанных единоборств Коул Янг не раз соглашался проиграть за деньги.</string>
@@ -24,4 +27,6 @@
     <string name="movie_six_name">Пчелка Майя </string>
     <string name="movie_six_date_pub">6 мая</string>
     <string name="movie_six_description">Когда упрямая пчелка Майя и ее лучший друг Вилли спасают принцессу-муравьишку, начинается сказочное..</string>
+    <string name="title_main_screen">Главная</string>
+    <string name="profile_title">Профиль</string>
 </resources>
