@@ -32,4 +32,7 @@ object Deps {
 
     // Logging
     const val timber =  "com.jakewharton.timber:timber:${Versions.timberVersion}"
+
+    // Gson libraries
+    const val Gson = "com.google.code.gson:gson:2.10"
 }
