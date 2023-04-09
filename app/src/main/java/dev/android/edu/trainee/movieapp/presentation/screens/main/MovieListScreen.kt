@@ -17,9 +17,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import dev.android.edu.trainee.movieapp.ui.views.MovieCard
 import dev.android.edu.trainee.movieapp.R
-import dev.android.edu.trainee.movieapp.ui.views.GenreChipsLazyRow
+import dev.android.edu.trainee.movieapp.components.GenreChipsLazyRow
+import dev.android.edu.trainee.movieapp.components.MovieCard
+import dev.android.edu.trainee.movieapp.domain.Movie
+import dev.android.edu.trainee.movieapp.presentation.state.MovieUiState
 
 
 @Composable
@@ -27,7 +29,8 @@ fun MovieListScreen(
     navController: NavController,
     viewModel: MovieViewModel,
 ) {
-    val movieList = viewModel.movies
+    val movieState = viewModel.moviesState.collectAsState()
+    val moviesList = (movieState.value as MovieUiState.Content).movies
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -35,11 +38,11 @@ fun MovieListScreen(
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             content = {
-                items(movieList.size) { position: Int ->
+                items(moviesList.size) { position: Int ->
                     Column(horizontalAlignment = Alignment.CenterHorizontally) {
                         MovieCard(
                             navController = navController,
-                            movie = movieList[position]
+                            movie = moviesList[position]
                         )
                     }
                 }

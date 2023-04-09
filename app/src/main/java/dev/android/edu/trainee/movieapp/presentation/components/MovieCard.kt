@@ -1,4 +1,4 @@
-package dev.android.edu.trainee.movieapp.ui.views
+package dev.android.edu.trainee.movieapp.components
 
 
 import androidx.compose.foundation.Image
@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import dev.android.edu.trainee.movieapp.Constants
+import dev.android.edu.trainee.movieapp.util.Constants
 import dev.android.edu.trainee.movieapp.domain.Movie
 import dev.android.edu.trainee.movieapp.navigation.Screen
 
@@ -33,7 +33,7 @@ fun MovieCard(navController: NavController, movie: Movie) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Image(
                 painter = painterResource(id = movie.photo),
-                contentDescription = movie.name,
+                contentDescription = movie.title,
                 modifier = Modifier
                     .height(Constants.image_size_h)
                     .fillMaxWidth()
@@ -44,7 +44,7 @@ fun MovieCard(navController: NavController, movie: Movie) {
             ) {
 
                 Text(
-                    text = movie.name,
+                    text = movie.title,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold
                 )

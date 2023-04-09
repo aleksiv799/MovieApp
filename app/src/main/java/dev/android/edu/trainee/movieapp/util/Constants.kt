@@ -1,4 +1,4 @@
-package dev.android.edu.trainee.movieapp
+package dev.android.edu.trainee.movieapp.util
 
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp

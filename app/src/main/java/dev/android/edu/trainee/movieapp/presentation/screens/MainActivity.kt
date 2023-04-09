@@ -1,4 +1,4 @@
-package dev.android.edu.trainee.movieapp.screens
+package dev.android.edu.trainee.movieapp.presentation.screens
 
 import FilmViewModelFactory
 import MovieViewModel

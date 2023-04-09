@@ -1,4 +1,4 @@
-package dev.android.edu.trainee.movieapp.ui.views
+package dev.android.edu.trainee.movieapp.components
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -13,7 +13,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun CircleText(

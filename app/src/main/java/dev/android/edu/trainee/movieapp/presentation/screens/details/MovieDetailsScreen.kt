@@ -5,6 +5,7 @@ import MovieViewModel
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,9 +14,11 @@ import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -23,10 +26,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import dev.android.edu.trainee.movieapp.R
+import dev.android.edu.trainee.movieapp.components.CircleText
+import dev.android.edu.trainee.movieapp.components.RatingBar
 import dev.android.edu.trainee.movieapp.domain.Movie
+import dev.android.edu.trainee.movieapp.domain.model.Actor
 import dev.android.edu.trainee.movieapp.ui.theme.MovieAppTheme
-import dev.android.edu.trainee.movieapp.ui.views.CircleText
-import dev.android.edu.trainee.movieapp.ui.views.RatingBar
+
 
 
 @Composable
@@ -112,7 +118,7 @@ fun CardDetailsMovie(
                         top = 14.dp,
 
                         ),
-                text = movie.name,
+                text = movie.title,
                 style = TextStyle(
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
@@ -125,6 +131,17 @@ fun CardDetailsMovie(
             Text(text  = movie.description)
             Spacer(modifier = Modifier.padding(16.dp))
             Text("Актеры", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            LazyRow(
+                contentPadding = PaddingValues(
+                    horizontal = 20.dp,
+                    vertical = 18.dp
+                ),
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
+            ) {
+                items(movie.actors.size) {
+                    ActorRow(actor = movie.actors[it].copy())
+                }
+            }
         }
     }
 }
@@ -163,7 +180,22 @@ fun TextInputField(
             textStyle = TextStyle(fontSize = 16.sp, color = Color.Black)
         )
     }
+}
 
+@Composable
+fun ActorRow(actor: Actor) {
+    Column() {
+        Image(
+            modifier = Modifier
+                .width(150.dp)
+                .height(200.dp)
+                .clip(RoundedCornerShape(20.dp)),
+            contentScale = ContentScale.Crop,
+            painter = painterResource(id = actor.image),
+            contentDescription = ""
+        )
+        Text(text = actor.name, fontWeight = FontWeight.Bold, fontSize = 12.sp)
+    }
 }
 
 

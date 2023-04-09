@@ -1,4 +1,4 @@
-package dev.android.edu.trainee.movieapp.ui.views
+package dev.android.edu.trainee.movieapp.components
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
